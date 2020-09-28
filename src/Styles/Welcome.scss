@@ -1,0 +1,30 @@
+.Welcome {
+    height: 100vh;
+    position: relative;
+    width: 100vw;
+    background-color: brown;
+    display: flex;
+    justify-content: center;
+    .c1{
+        z-index: 1;
+        position: absolute;
+        bottom: 100px;
+        width: 100px;
+        height: 100px;
+       background-color: blue;
+
+    }
+    .c2 {
+        width: 100px;
+        height: 100px;
+        background: pink;
+    }
+    .c3 {
+        z-index: 1;
+        right: 10px;
+        position: absolute;
+        width: 500px;
+        height: 100px;
+        background: blueviolet;
+    }
+}
