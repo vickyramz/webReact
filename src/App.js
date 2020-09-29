@@ -4,11 +4,13 @@ import './App.css';
 import { Button, DatePicker } from 'antd';
 import {Route, Link} from 'react-router-dom'
 import SignIn from './Containers/AuthenicationScreens/SignIn'
+import SignUp from './Containers/AuthenicationScreens/SignUp'
 import { OmitProps } from 'antd/lib/transfer/ListBody';
 function App() {
   return (
     <div className="App">
-     <Route path='/' component={SignIn}/>
+     <Route exact path='/' component={SignIn}/>
+     <Route path='/signUp' exact component={SignUp}/>
     </div>
   );
 

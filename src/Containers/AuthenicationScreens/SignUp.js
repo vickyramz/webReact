@@ -6,13 +6,13 @@ import HeaderImagewithText from '../../Component/HeaderImagewithText'
 import FloatingLabel from '../../Component/FloatingLabel'
 import passwrd from '../../Assets/passwrd.png'
 import CustomButton from '../../Component/CustomButton'
-import { Redirect, Link } from 'react-router-dom';
-function SignIn(props) {
+function SignUp(props) {
     let GlobalConst = global.const;
     const [Email,setEmail]=useState('')
-    const [Password,setPassword]=useState('')
+    const [NewPassword,setNewPassword]=useState('')
+    const [ConfirmPassword,setConfirmPassword]=useState('')
     function RedirectToSignIn(){
-      props.history.push('/signUp')  
+        props.history.pop()  
     }
   return (
     <div className="container">
@@ -22,13 +22,14 @@ function SignIn(props) {
         <HeaderImagewithText/>
         </div>
         <div >
-        <h2 className="signUpHeader">{GlobalConst.SingIn}</h2>
+        <h2 className="signUpHeader">{GlobalConst.signUpOrganization}</h2>
         <FloatingLabel  PlaceHolder={GlobalConst.Email} TextChange={(text)=>setEmail(text)}/>
-        <FloatingLabel PlaceHolder={GlobalConst.Password} icons={passwrd} TextChange={(text)=>setPassword(text)}/>
+        <FloatingLabel PlaceHolder={GlobalConst.NewPassword} icons={passwrd} TextChange={(text)=>setNewPassword(text)}/>
+        <FloatingLabel PlaceHolder={GlobalConst.ConfirmPassword} icons={passwrd} TextChange={(text)=>setConfirmPassword(text)}/>
         </div>
         <div>
-       <CustomButton  onClick={()=>RedirectToSignIn()} title={GlobalConst.signInButton}/>
-         <p className="SignUpRedirection">{GlobalConst.SignUpRedirection}</p>
+       <CustomButton  onClick={()=>RedirectToSignIn()}  title={GlobalConst.signUpButton}/>
+         <p className="SignUpRedirection" onClick={()=>RedirectToSignIn()}>{GlobalConst.SignUpRedirection}</p>
         </div>
         </div>
        
@@ -38,4 +39,4 @@ function SignIn(props) {
   );
 }
 
-export default SignIn;
+export default SignUp;
