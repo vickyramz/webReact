@@ -6,13 +6,15 @@ import HeaderImagewithText from '../../Component/HeaderImagewithText'
 import FloatingLabel from '../../Component/FloatingLabel'
 import passwrd from '../../Assets/passwrd.png'
 import CustomButton from '../../Component/CustomButton'
+import { Redirect, Link, useHistory } from 'react-router-dom';
 function SignUp(props) {
     let GlobalConst = global.const;
     const [Email,setEmail]=useState('')
     const [NewPassword,setNewPassword]=useState('')
     const [ConfirmPassword,setConfirmPassword]=useState('')
+    const history = useHistory()
     function RedirectToSignIn(){
-        props.history.pop()  
+      history.push('/')  
     }
   return (
     <div className="container">
@@ -28,7 +30,7 @@ function SignUp(props) {
         <FloatingLabel PlaceHolder={GlobalConst.ConfirmPassword} icons={passwrd} TextChange={(text)=>setConfirmPassword(text)}/>
         </div>
         <div>
-       <CustomButton  onClick={()=>RedirectToSignIn()}  title={GlobalConst.signUpButton}/>
+       <CustomButton onClick={()=>RedirectToSignIn()}  title={GlobalConst.signUpButton}/>
          <p className="SignUpRedirection" onClick={()=>RedirectToSignIn()}>{GlobalConst.SignUpRedirection}</p>
         </div>
         </div>

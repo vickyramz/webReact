@@ -17,7 +17,7 @@ function CustomButton(props) {
 }
 CustomButton.propTypes = {
     title:PropTypes.string.isRequired,
-    onClick:PropTypes.func.isRequired
+    onClick:PropTypes.func
 };
 
 export default CustomButton;
